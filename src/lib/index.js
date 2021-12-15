@@ -5,7 +5,6 @@ const validator = require('../cli-validator/utils/validator');
 const { formatResultsAsObject } = require('../cli-validator/utils/jsonResults');
 const spectralValidator = require('../spectral/utils/spectral-validator');
 const dedupFunction = require('../cli-validator/utils/noDeduplication');
-const { Spectral } = require('@stoplight/spectral');
 
 module.exports = async function(
   input,
@@ -29,12 +28,6 @@ module.exports = async function(
   }
 
   const swagger = await buildSwaggerObject(input);
-
-  try {
-    spectralResults = await spectral.run(input);
-  } catch (err) {
-    return Promise.reject(err);
-  }
   const results = validator(swagger, configObject, spectralResults);
 
   // return a json object containing the errors/warnings
