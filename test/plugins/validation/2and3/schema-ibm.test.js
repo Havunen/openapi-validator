@@ -1153,7 +1153,7 @@ describe('validation plugin - semantic - schema-ibm - OpenAPI 3', () => {
   });
 
   it('should process allOf, oneOf, anyOf schemas correctly', () => {
-    const spec = yaml.safeLoad(
+    const spec = yaml.load(
       fs.readFileSync('test/cli-validator/mockFiles/oas3/testoneof.yaml')
     );
 

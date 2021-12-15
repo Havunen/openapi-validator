@@ -1,12 +1,12 @@
 const inCodeValidator = require('../../../src/lib');
 const { readFileSync } = require('fs');
-const { safeLoad } = require('js-yaml');
+const { load } = require('js-yaml');
 const { join } = require('path');
 const pathToOas3Schema = join(
   __dirname,
   '../mockFiles/oas3/oas3-schema-errors.yml'
 );
-const oas3Schema = safeLoad(readFileSync(pathToOas3Schema));
+const oas3Schema = load(readFileSync(pathToOas3Schema));
 
 describe('spectral - test oas3-schema errors', function() {
   let res;

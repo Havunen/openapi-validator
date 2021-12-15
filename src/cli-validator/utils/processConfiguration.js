@@ -204,7 +204,7 @@ const getConfigObject = async function(defaultMode, chalk, configFileOverride) {
 
   // if the user does not have a config file, run in default mode and warn them
   // (findUp returns null if it does not find a file)
-  if (configFile === null && !defaultMode) {
+  if (!configFile && !defaultMode) {
     console.log(
       '\n' +
         chalk.yellow('[Warning]') +
@@ -247,7 +247,7 @@ const getFilesToIgnore = async function() {
   const ignoreFile = await findUp('.validateignore');
 
   // if file does not exist, thats fine. it is optional
-  if (ignoreFile === null) return [];
+  if (!ignoreFile) return [];
 
   const pathToFile = `${path.dirname(ignoreFile)}/`;
 
@@ -334,7 +334,7 @@ const getLimits = async function(chalk, limitsFileOverride) {
   // of the threshold file
   const limitsFile = await findUp(limitsFileName, findUpOpts);
 
-  if (limitsFile !== null) {
+  if (limitsFile) {
     try {
       const fileAsString = await readFile(limitsFile, 'utf8');
       limitsObject = JSON.parse(fileAsString);

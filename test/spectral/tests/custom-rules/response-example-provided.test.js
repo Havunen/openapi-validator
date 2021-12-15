@@ -114,7 +114,7 @@ describe('spectral - test validation that schema provided in content object', fu
   });
 
   it('should not error on a clean API definition with response examples', async () => {
-    const spec = yaml.safeLoad(
+    const spec = yaml.load(
       fs.readFileSync(
         path.join(__dirname, '../../../cli-validator/mockFiles/oas3/clean.yml')
       )

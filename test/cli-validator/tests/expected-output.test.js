@@ -96,8 +96,7 @@ describe('cli tool - test expected output - Swagger 2', function() {
 
   it('should include the validator version in JSON output for the inCodeValidator', async function() {
     const content = fs
-      .readFileSync('./test/cli-validator/mockFiles/clean.yml')
-      .toString();
+      .readFileSync('./test/cli-validator/mockFiles/clean.yml');
     const spec = yaml.load(content);
 
     const defaultMode = true;
@@ -137,8 +136,7 @@ describe('cli tool - test expected output - Swagger 2', function() {
 
   it('should include the associated rule in return value of in-memory validator', async function() {
     const content = fs
-      .readFileSync('./test/cli-validator/mockFiles/err-and-warn.yaml')
-      .toString();
+      .readFileSync('./test/cli-validator/mockFiles/err-and-warn.yaml');
     const oas2Object = yaml.load(content);
 
     const defaultMode = true;
@@ -355,8 +353,7 @@ describe('test expected output - OpenAPI 3', function() {
 
   it('should include the associated rule in return value of in-memory validator', async function() {
     const content = fs
-      .readFileSync('./test/cli-validator/mockFiles/oas3/err-and-warn.yaml')
-      .toString();
+      .readFileSync('./test/cli-validator/mockFiles/oas3/err-and-warn.yaml');
     const oas3Object = yaml.load(content);
 
     const defaultMode = true;

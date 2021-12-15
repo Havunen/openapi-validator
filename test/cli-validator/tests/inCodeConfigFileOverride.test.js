@@ -12,8 +12,7 @@ describe('configFileOverride', function() {
     const mockConfig = jest.spyOn(config, 'get').mockReturnValue(defaultConfig);
 
     const content = fs
-      .readFileSync('./test/cli-validator/mockFiles/clean.yml')
-      .toString();
+      .readFileSync('./test/cli-validator/mockFiles/clean.yml');
     const spec = yaml.load(content);
 
     const defaultMode = false;

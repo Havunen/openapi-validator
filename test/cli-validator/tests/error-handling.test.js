@@ -133,7 +133,7 @@ describe('cli tool - test error handling', function() {
       '[Error] Invalid input file: ./test/cli-validator/mockFiles/bad-json.json. See below for details.'
     );
     expect(capturedText[1].trim()).toEqual(
-      'SyntaxError: Unexpected token ; in JSON at position 14'
+      'SyntaxError: Unexpected token ; in JSON at position 15'
     );
   });
 

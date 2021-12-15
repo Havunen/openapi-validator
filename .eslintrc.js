@@ -6,7 +6,7 @@ module.exports = {
     'mocha': true,
     'jest': true,
   },
-  'parser': 'babel-eslint',
+  'parser': '@babel/eslint-parser',
   'rules': {
     'prettier/prettier': ['error', {'singleQuote': true}],
     'no-console': 0,

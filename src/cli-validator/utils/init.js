@@ -60,7 +60,7 @@ async function readCurrentConfig(chalk) {
 
   // if the user does not have a config file,
   // there is no need for the migration step
-  if (configFile === null) {
+  if (!configFile) {
     console.log(`No .validaterc file found to migrate.`);
     return Promise.reject(2);
   }
